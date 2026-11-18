@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraud-detection-keras"
+version = "0.1.0"
+description = "Card-fraud detection with Keras 3: embedding MLP, three imbalance strategies, seed variance, autoencoder anomaly score, drift to a new attack."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Wiktor Ligmanowski" }]
+dependencies = ["numpy>=1.26", "pandas>=2.1", "keras>=3.5", "tensorflow>=2.17", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+fraudkeras = "fraudkeras.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+extend-exclude = ["src/fraudkeras/data.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501", "E731"]

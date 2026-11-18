@@ -1,0 +1,276 @@
+{
+  "data": {
+    "n_cards": 2500,
+    "days": 90,
+    "seed": 0,
+    "n_transactions": 208206,
+    "fraud_rate": 0.0051,
+    "n_fraud": {
+      "train": 613,
+      "validation": 181,
+      "test": 270
+    }
+  },
+  "models": {
+    "mlp_bce": {
+      "n": 34556,
+      "n_fraud": 270,
+      "pr_auc": 0.8082,
+      "alert_rate": 0.006,
+      "recall": 0.7296,
+      "precision": 0.9517,
+      "fraud_amount_caught_share": 0.5294,
+      "net_savings_pln": 116332.0,
+      "recall_by_pattern": {
+        "card_testing": {
+          "n": 44,
+          "recall": 1.0
+        },
+        "mule_cashout": {
+          "n": 117,
+          "recall": 0.47
+        },
+        "stolen_card": {
+          "n": 57,
+          "recall": 0.912
+        },
+        "takeover": {
+          "n": 52,
+          "recall": 0.885
+        }
+      },
+      "pr_auc_known_patterns": 0.9809,
+      "epochs_run": 37
+    },
+    "mlp_bce_weighted": {
+      "n": 34556,
+      "n_fraud": 270,
+      "pr_auc": 0.8532,
+      "alert_rate": 0.0061,
+      "recall": 0.7333,
+      "precision": 0.9429,
+      "fraud_amount_caught_share": 0.5283,
+      "net_savings_pln": 116091.0,
+      "recall_by_pattern": {
+        "card_testing": {
+          "n": 44,
+          "recall": 1.0
+        },
+        "mule_cashout": {
+          "n": 117,
+          "recall": 0.47
+        },
+        "stolen_card": {
+          "n": 57,
+          "recall": 0.93
+        },
+        "takeover": {
+          "n": 52,
+          "recall": 0.885
+        }
+      },
+      "pr_auc_known_patterns": 0.9766,
+      "epochs_run": 17,
+      "pr_auc_ci95": [
+        0.767,
+        0.925
+      ],
+      "recall_ci95": [
+        0.618,
+        0.839
+      ]
+    },
+    "mlp_focal": {
+      "n": 34556,
+      "n_fraud": 270,
+      "pr_auc": 0.8152,
+      "alert_rate": 0.006,
+      "recall": 0.737,
+      "precision": 0.9522,
+      "fraud_amount_caught_share": 0.5323,
+      "net_savings_pln": 116976.0,
+      "recall_by_pattern": {
+        "card_testing": {
+          "n": 44,
+          "recall": 1.0
+        },
+        "mule_cashout": {
+          "n": 117,
+          "recall": 0.47
+        },
+        "stolen_card": {
+          "n": 57,
+          "recall": 0.912
+        },
+        "takeover": {
+          "n": 52,
+          "recall": 0.923
+        }
+      },
+      "pr_auc_known_patterns": 0.9762,
+      "epochs_run": 40
+    },
+    "autoencoder": {
+      "n": 34556,
+      "n_fraud": 270,
+      "pr_auc": 0.4601,
+      "alert_rate": 0.0064,
+      "recall": 0.3333,
+      "precision": 0.4072,
+      "fraud_amount_caught_share": 0.0648,
+      "net_savings_pln": 13252.0,
+      "recall_by_pattern": {
+        "card_testing": {
+          "n": 44,
+          "recall": 1.0
+        },
+        "mule_cashout": {
+          "n": 117,
+          "recall": 0.0
+        },
+        "stolen_card": {
+          "n": 57,
+          "recall": 0.193
+        },
+        "takeover": {
+          "n": 52,
+          "recall": 0.673
+        }
+      },
+      "pr_auc_known_patterns": 0.6226
+    },
+    "hybrid_mean": {
+      "n": 34556,
+      "n_fraud": 270,
+      "pr_auc": 0.7734,
+      "alert_rate": 0.0063,
+      "recall": 0.637,
+      "precision": 0.789,
+      "fraud_amount_caught_share": 0.4624,
+      "net_savings_pln": 101432.0,
+      "recall_by_pattern": {
+        "card_testing": {
+          "n": 44,
+          "recall": 1.0
+        },
+        "mule_cashout": {
+          "n": 117,
+          "recall": 0.419
+        },
+        "stolen_card": {
+          "n": 57,
+          "recall": 0.702
+        },
+        "takeover": {
+          "n": 52,
+          "recall": 0.75
+        }
+      },
+      "pr_auc_known_patterns": 0.8637,
+      "pr_auc_ci95": [
+        0.674,
+        0.849
+      ],
+      "recall_ci95": [
+        0.531,
+        0.734
+      ]
+    }
+  },
+  "seed_variance_mlp_bce_weighted": {
+    "n_seeds": 3,
+    "pr_auc": {
+      "mean": 0.8482,
+      "std": 0.0037
+    },
+    "pr_auc_known_patterns": {
+      "mean": 0.976,
+      "std": 0.0006
+    },
+    "recall": {
+      "mean": 0.7123,
+      "std": 0.0155
+    },
+    "net_savings_pln": {
+      "mean": 110708.6667,
+      "std": 3819.2167
+    },
+    "mule_recall": {
+      "mean": 0.447,
+      "std": 0.016
+    }
+  },
+  "models_summary": {
+    "mlp_bce": {
+      "pr_auc": 0.8082,
+      "pr_auc_known_patterns": 0.9809,
+      "recall": 0.7296,
+      "precision": 0.9517,
+      "alert_rate": 0.006,
+      "net_savings_pln": 116332.0,
+      "recall_by_pattern": {
+        "card_testing": 1.0,
+        "mule_cashout": 0.47,
+        "stolen_card": 0.912,
+        "takeover": 0.885
+      }
+    },
+    "mlp_bce_weighted": {
+      "pr_auc": 0.8532,
+      "pr_auc_known_patterns": 0.9766,
+      "recall": 0.7333,
+      "precision": 0.9429,
+      "alert_rate": 0.0061,
+      "net_savings_pln": 116091.0,
+      "recall_by_pattern": {
+        "card_testing": 1.0,
+        "mule_cashout": 0.47,
+        "stolen_card": 0.93,
+        "takeover": 0.885
+      }
+    },
+    "mlp_focal": {
+      "pr_auc": 0.8152,
+      "pr_auc_known_patterns": 0.9762,
+      "recall": 0.737,
+      "precision": 0.9522,
+      "alert_rate": 0.006,
+      "net_savings_pln": 116976.0,
+      "recall_by_pattern": {
+        "card_testing": 1.0,
+        "mule_cashout": 0.47,
+        "stolen_card": 0.912,
+        "takeover": 0.923
+      }
+    },
+    "autoencoder": {
+      "pr_auc": 0.4601,
+      "pr_auc_known_patterns": 0.6226,
+      "recall": 0.3333,
+      "precision": 0.4072,
+      "alert_rate": 0.0064,
+      "net_savings_pln": 13252.0,
+      "recall_by_pattern": {
+        "card_testing": 1.0,
+        "mule_cashout": 0.0,
+        "stolen_card": 0.193,
+        "takeover": 0.673
+      }
+    },
+    "hybrid_mean": {
+      "pr_auc": 0.7734,
+      "pr_auc_known_patterns": 0.8637,
+      "recall": 0.637,
+      "precision": 0.789,
+      "alert_rate": 0.0063,
+      "net_savings_pln": 101432.0,
+      "recall_by_pattern": {
+        "card_testing": 1.0,
+        "mule_cashout": 0.419,
+        "stolen_card": 0.702,
+        "takeover": 0.75
+      }
+    }
+  },
+  "runtime_s": 158.1
+}
